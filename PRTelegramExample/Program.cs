@@ -11,10 +11,24 @@ var telegram = new PRBot(option =>
     option.BotId = 0;
 });
 
+var telegramx = new PRBot(option =>
+{
+    option.Token = "";
+    option.ClearUpdatesOnStart = true;
+    option.WhiteListUsers = new List<long>() { };
+    option.Admins = new List<long>() { };
+    option.BotId = 1;
+});
+
+
+
 telegram.OnLogCommon += Telegram_OnLogCommon;
 telegram.OnLogError += Telegram_OnLogError;
+telegramx.OnLogCommon += Telegram_OnLogCommon;
+telegramx.OnLogError += Telegram_OnLogError;
 
 await telegram.Start();
+await telegramx.Start();
 
 void Telegram_OnLogError(Exception ex, long? id)
 {
@@ -35,7 +49,7 @@ void Telegram_OnLogCommon(string msg, PRBot.TelegramEvents typeEvent, ConsoleCol
 while (true)
 {
     var result = Console.ReadLine();
-    if(result.ToLower() == EXIT_COMMAND)
+    if (result.ToLower() == EXIT_COMMAND)
     {
         Environment.Exit(0);
     }
