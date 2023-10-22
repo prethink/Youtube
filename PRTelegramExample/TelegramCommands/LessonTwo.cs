@@ -5,6 +5,7 @@ using PRTelegramBot.Models;
 using PRTelegramBot.Models.CallbackCommands;
 using PRTelegramBot.Models.InlineButtons;
 using PRTelegramBot.Models.Interface;
+using PRTelegramExample.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.ReplyMarkups;
 
-namespace PRTelegramExample
+namespace PRTelegramExample.TelegramCommands
 {
     public class LessonTwo
     {

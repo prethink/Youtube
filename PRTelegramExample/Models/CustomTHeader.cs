@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PRTelegramExample
+namespace PRTelegramExample.Models
 {
     public enum CustomTHeader
     {

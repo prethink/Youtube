@@ -14,20 +14,20 @@ using Telegram.Bot;
 using Telegram.Bot.Types;
 using THeader = PRTelegramBot.Models.Enums.THeader;
 
-namespace PRTelegramExample
+namespace PRTelegramExample.TelegramCommands
 {
     public class Calendar
     {
         /// <summary>
         /// Русский формат текста даты
         /// </summary>
-        public static DateTimeFormatInfo dtfi = CultureInfo.GetCultureInfo("ru-RU",false).DateTimeFormat;
+        public static DateTimeFormatInfo dtfi = CultureInfo.GetCultureInfo("ru-RU", false).DateTimeFormat;
 
         /// <summary>
         /// Точка входа в календарь
         /// </summary>
         [ReplyMenuHandler("Calendar")]
-        public static async Task CalendarPick(ITelegramBotClient botClient,Update update)
+        public static async Task CalendarPick(ITelegramBotClient botClient, Update update)
         {
             var calendar = Markup.Calendar(DateTime.Now, dtfi);
             var option = new OptionMessage();
@@ -42,9 +42,9 @@ namespace PRTelegramExample
         public static async Task PickYearMonth(ITelegramBotClient botClient, Update update)
         {
             var commnad = InlineCallback<CalendarTCommand>.GetCommandByCallbackOrNull(update.CallbackQuery.Data);
-            if(commnad != null)
+            if (commnad != null)
             {
-                var data = Markup.PickMonthYear(commnad.Data.Date,dtfi);
+                var data = Markup.PickMonthYear(commnad.Data.Date, dtfi);
                 var option = new OptionMessage();
                 option.MenuInlineKeyboardMarkup = data;
                 await PRTelegramBot.Helpers.Message.EditInline(botClient, update.CallbackQuery.Message.Chat.Id, update.CallbackQuery.Message.MessageId, option);
@@ -106,7 +106,7 @@ namespace PRTelegramExample
         public static async Task PickDate(ITelegramBotClient botClient, Update update)
         {
             var command = InlineCallback<CalendarTCommand>.GetCommandByCallbackOrNull(update.CallbackQuery.Data);
-            if(command != null)
+            if (command != null)
             {
                 var date = command.Data.Date;
                 await PRTelegramBot.Helpers.Message.Edit(botClient, update, $"Дата:{date}");
