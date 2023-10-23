@@ -11,6 +11,8 @@ namespace PRTelegramExample.Models
     {
         ExampleOne = 100,
         ExampleTwo,
-        ExampleThree
+        ExampleThree,
+        CustomPage,
+        Favorite
     }
 }
