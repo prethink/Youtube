@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace PRTelegramExample.Models
 {
+    /// <summary>
+    /// Кастомные заголовки команд
+    /// </summary>
     public enum CustomTHeader
     {
         ExampleOne = 100,

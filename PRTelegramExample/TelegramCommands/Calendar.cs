@@ -16,6 +16,9 @@ using THeader = PRTelegramBot.Models.Enums.THeader;
 
 namespace PRTelegramExample.TelegramCommands
 {
+    /// <summary>
+    /// Урок 3 - работа с календарем
+    /// </summary>
     public class Calendar
     {
         /// <summary>
@@ -25,6 +28,7 @@ namespace PRTelegramExample.TelegramCommands
 
         /// <summary>
         /// Точка входа в календарь
+        /// Напишите в чате Calendar
         /// </summary>
         [ReplyMenuHandler("Calendar")]
         public static async Task CalendarPick(ITelegramBotClient botClient, Update update)
