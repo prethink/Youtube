@@ -1,5 +1,6 @@
 ﻿using PRTelegramBot.Attributes;
 using PRTelegramBot.Extensions;
+using PRTelegramBot.Models;
 using PRTelegramExample.Models;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace PRTelegramExample.TelegramCommands
         /// <summary>
         /// Обработка данных шага 1
         /// </summary>
-        public static async Task StepOne(ITelegramBotClient botClient, Update update)
+        public static async Task StepOne(ITelegramBotClient botClient, Update update, CustomParameters args)
         {
             update.GetCacheData<UserCache>().Data = update.Message.Text;
             string msg = "Данные сохранены, напишите любое сообщение чтобы их увидеть.";
@@ -44,7 +45,7 @@ namespace PRTelegramExample.TelegramCommands
         /// <summary>
         /// Обработка данных шага 2
         /// </summary>
-        public static async Task StepTwo(ITelegramBotClient botClient, Update update)
+        public static async Task StepTwo(ITelegramBotClient botClient, Update update, CustomParameters args)
         {
             string msg = $"{update.GetCacheData<UserCache>().Data}";
             await PRTelegramBot.Helpers.Message.Send(botClient, update, msg);

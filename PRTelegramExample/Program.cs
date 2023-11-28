@@ -7,7 +7,7 @@ const string EXIT_COMMAND = "exit";
 var telegram = new PRBot(option =>
 {
     // Токен телеграм бота берется из BotFather
-    option.Token = "";
+    option.Token = "5811676836:AAFw0wq73pcidYPyks9G-rQJTUVGMNHPJBQ";
     //Перед запуском очищает список обновлений, которые накопились когда бот не работал.
     option.ClearUpdatesOnStart = true;
     // Если есть хоть 1 идентификатор телеграм пользователя, могут пользоваться только эти пользователи

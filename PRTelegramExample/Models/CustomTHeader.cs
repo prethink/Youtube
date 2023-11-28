@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PRTelegramBot.Attributes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace PRTelegramExample.Models
     /// <summary>
     /// Кастомные заголовки команд
     /// </summary>
+    [InlineCommand]
     public enum CustomTHeader
     {
         ExampleOne = 100,
