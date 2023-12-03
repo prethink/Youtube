@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="PRTelegramBot" Version="0.4.5" />
+    <PackageReference Include="PRTelegramBot" Version="0.4.6" />
   </ItemGroup>
 
 </Project>
